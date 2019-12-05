@@ -1,3 +1,8 @@
-# Ray - Solution
+# Ray
 
-One possible set of solutions to the [Ray]() challenge.
+An array re-implementation challenge.
+
+```bash
+npm install
+npm test
+```
