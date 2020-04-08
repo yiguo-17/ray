@@ -55,8 +55,9 @@ describe('Ray.pop', () => {
   })
 
   it(`decrements the length by 1`, () => {
-    ray.push(3);
-    ray.push(5);
+    ray[0] = 5;
+    ray[1] = 5;
+    ray.length = 2;
     ray.pop();
     expect(ray.length).toBe(1)
     ray.pop();
@@ -65,23 +66,20 @@ describe('Ray.pop', () => {
 
 
   it(`removes the value at the highest used number key`, () => {
-    ray.push(5);
-    ray.push(7);
+    ray[0] = 5;
+    ray[1] = 7;
+    ray.length = 2;
     ray.pop();
     expect(ray[0]).toBe(5)
     expect(ray[1]).toBe(undefined);
     ray.pop();
     expect(ray[0]).toBe(undefined);
-    ray.push('hi');
-    expect(ray[0]).toBe('hi');
-    ray.pop()
-    ray.push('hello')
-    expect(ray[0]).toBe('hello')
   })
 
   it(`returns the removed value`, () => {
-    ray.push(15);
-    ray.push(51);
+    ray[0] = 15;
+    ray[1] = 51;
+    ray.length = 2;
     const removed1 = ray.pop();
     expect(removed1).toBe(51)
     const removed2 = ray.pop();
@@ -133,9 +131,10 @@ describe('Ray.shift', () => {
   })
 
   it(`decrements the length by 1`, () => {
-    ray.push(5)
-    ray.push('hello')
-    ray.push(false)
+    ray[0] = 5;
+    ray[1] = 'hello';
+    ray[2] = false;
+    ray.length = 3;
     ray.shift();
     expect(ray.length).toBe(2);
     ray.shift();
@@ -145,16 +144,18 @@ describe('Ray.shift', () => {
   })
 
   it(`removes the value and key at the previous last index`, () => {
-    ray.push(7);
-    ray.push(11);
+    ray[0] = 7;
+    ray[1] = 11;
+    ray.length = 2;
     ray.shift();
     expect(ray[1]).toBe(undefined);
   })
 
   it(`pushes all elements but the first to a key one lower`, () => {
-    ray.push(7);
-    ray.push(11);
-    ray.push(12);
+    ray[0] = 7;
+    ray[1] = 11;
+    ray[2] = 12;
+    ray.length = 3;
     ray.shift();
     expect(ray[0]).toBe(11);
     expect(ray[1]).toBe(12);
@@ -163,8 +164,9 @@ describe('Ray.shift', () => {
   })
 
   it(`returns the removed element`, () => {
-    ray.push(15);
-    ray.push(51);
+    ray[0] = 15;
+    ray[1] = 51;
+    ray.length = 2;
     const removed1 = ray.shift();
     expect(removed1).toBe(15)
     const removed2 = ray.shift();
