@@ -1,6 +1,4 @@
-const {
-  Ray,
-} = require('./main.js')
+const Ray = require('./main.js');
 
 let ray;
 
