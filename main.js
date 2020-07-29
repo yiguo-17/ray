@@ -1,7 +1,6 @@
-const Ray = () => {
+const Ray = function() {
   
 }
 
-module.exports = {
-  Ray,
-}
+
+module.exports = Ray
