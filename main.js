@@ -33,7 +33,7 @@ const Ray = function() {
             return first;
         },
         unshift: function(value){
-            for(let i=1; i<=ray.length;i++){
+            for(let i=ray.length; i>=1;i--){
                 ray[String(i)] = ray[String(i-1)]
             }
             ray['0'] = value;
@@ -43,7 +43,6 @@ const Ray = function() {
     };
  return ray
 }
-
 
 
 
