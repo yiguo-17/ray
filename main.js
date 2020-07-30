@@ -1,6 +1,6 @@
 const Ray = function() {
     const ray = {
-        length: this.length,
+        length: 0,
         push: function(value){
             ray[String(ray.length)]=value;
             ray.length++;
